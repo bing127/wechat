@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wechat_app/common/loadAssetSvg.dart';
+import 'package:wechat_app/page/home/home_router.dart';
 import 'package:wechat_app/page/home/widget/custom_chat.dart';
+import 'package:wechat_app/routers/fluro_navigator.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
               chatType: ChatType.SINGLE,
               receiverType: ReceiverType.TEXT,
               onTap: (){
-
+                NavigatorUtils.push(context, HomeRouter.chatPage);
               },
             ),
             CustomChat(
