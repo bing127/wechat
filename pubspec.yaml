@@ -24,7 +24,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.3
   badges: ^1.1.0
   oktoast: ^2.2.1
   fluro: ^1.5.1
@@ -34,6 +34,9 @@ dependencies:
   url_launcher: ^5.2.7
   flustars: ^0.2.6+1
   webview_flutter: ^0.3.17
+  flutter_svg: ^0.15.0
+  flutter_screenutil: ^0.7.0
+  cached_network_image: ^1.1.3
 
 dev_dependencies:
   flutter_test:
@@ -52,8 +55,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+     - assets/images/svg/
+     - assets/images/perch/
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -67,12 +71,28 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+     - family: WeChatSansSS
+       fonts:
+         - asset: fonts/WeChatSansSS-Light.ttf
+         - asset: fonts/WeChatSansSS-Medium.ttf
+           weight: 500
+         - asset: fonts/WeChatSansSS-Bold.ttf
+           weight: 600
+         - asset: fonts/WeChatSansSS-Regular.ttf
+           weight: 700
+     - family: WeChatSansStd
+       fonts:
+         - asset: fonts/WeChatSansStd-Light.ttf
+         - asset: fonts/WeChatSansStd-Medium.ttf
+           weight: 500
+         - asset: fonts/WeChatSansStd-Bold.ttf
+           weight: 600
+         - asset: fonts/WeChatSansStd-Regular.ttf
+           weight: 700
+     - family: WeChatNum
+       fonts:
+         - asset: fonts/WeChatNum.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

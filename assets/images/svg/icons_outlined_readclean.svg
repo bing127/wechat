@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/Outlined/ReadClean</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/Outlined/ReadClean" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" fill="#000000" x="11.4" y="5" width="1.2" height="14"></rect>
+        <path d="M11.4,5.4482092 L4.05695495,4.39188954 C3.83829193,4.36043419 3.63553094,4.51219599 3.6040756,4.730859 C3.601362,4.74972265 3.6,4.76875612 3.6,4.78781395 L3.6,16.7980022 C3.6,17.4941939 4.11155946,18.0846087 4.80065769,18.1837376 L11.4,19.1330734 L11.4,5.4482092 Z" id="路径" stroke="#000000" stroke-width="1.2"></path>
+        <path d="M20.4,5.4482092 L13.0569549,4.39188954 C12.8382919,4.36043419 12.6355309,4.51219599 12.6040756,4.730859 C12.601362,4.74972265 12.6,4.76875612 12.6,4.78781395 L12.6,16.7980022 C12.6,17.4941939 13.1115595,18.0846087 13.8006577,18.1837376 L20.4,19.1330734 L20.4,5.4482092 Z" id="路径复制" stroke="#000000" stroke-width="1.2" transform="translate(16.500000, 11.729614) scale(-1, 1) translate(-16.500000, -11.729614) "></path>
+    </g>
+</svg>

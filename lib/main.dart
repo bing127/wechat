@@ -8,7 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:wechat_app/page/app_page.dart';
 
   void main() async{
-    runApp(AppPage());
+    SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown
+    ]).then((_) => runApp(AppPage()));
     // 透明状态栏
     if (Platform.isAndroid) {
       SystemUiOverlayStyle systemUiOverlayStyle =
