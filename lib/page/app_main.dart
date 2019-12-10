@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat_app/common/android_back_desktop.dart';
 import 'package:wechat_app/common/loadAssetSvg.dart';
@@ -15,9 +16,7 @@ class AppMain extends StatefulWidget {
 
 class _AppMainState extends State<AppMain> {
   List<Widget> _pageList = new List();
-  List<String> _appBarTitles = ['微信', '通讯录', '发现', '我的'];
   final PageController _pageController = PageController();
-  List<BottomNavigationBarItem> _list;
   int _currentIndex = 0;
 
   @override
@@ -33,43 +32,6 @@ class _AppMainState extends State<AppMain> {
       FindPage(),
       MyPage(),
     ];
-  }
-
-  List<BottomNavigationBarItem> _buildBottomNavigationBarItem() {
-    if (_list == null) {
-      List _tabImages = [
-        [
-          const LoadAssetSvg('icons_outlined_chats',color:const Color(0xff111111)),
-          const LoadAssetSvg('icons_filled_chats',color:const Color(0xff07c160)),
-        ],
-        [
-          const LoadAssetSvg('icons_outlined_contacts',color:const Color(0xff111111)),
-          const LoadAssetSvg('icons_filled_contacts',color:const Color(0xff07c160)),
-        ],
-        [
-          const LoadAssetSvg('icons_outlined_discover',color:const Color(0xff111111)),
-          const LoadAssetSvg('icons_filled_discover',color:const Color(0xff07c160)),
-        ],
-        [
-          const LoadAssetSvg('icons_outlined_me',color:const Color(0xff111111)),
-          const LoadAssetSvg('icons_filled_me',color:const Color(0xff07c160)),
-        ]
-      ];
-      _list = List.generate(4, (i) {
-        return BottomNavigationBarItem(
-            icon: _tabImages[i][0],
-            activeIcon: _tabImages[i][1],
-            title: Padding(
-              padding: const EdgeInsets.only(top: 2),
-              child: Text(
-                _appBarTitles[i],
-                key: Key(_appBarTitles[i]),
-              ),
-            )
-        );
-      });
-    }
-    return _list;
   }
 
 
@@ -95,7 +57,68 @@ class _AppMainState extends State<AppMain> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Utils.getBackgroundColor(context),
-          items: _buildBottomNavigationBarItem(),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon:_badgeIcon(
+                  icon: "icons_outlined_chats",
+                  count: "66",
+                ),
+                activeIcon:_badgeIcon(
+                  icon: "icons_filled_chats",
+                  count: "66",
+                  isActive: true
+                ),
+                title: Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(
+                    '微信',
+                    key: Key('微信'),
+                  ),
+                )
+            ),
+            BottomNavigationBarItem(
+                icon:_badgeIcon(
+                    icon: "icons_outlined_contacts",
+                    count: "1",
+                    show: false
+                ),
+                activeIcon:_badgeIcon(
+                    icon: "icons_filled_contacts",
+                    count: "1",
+                    isActive: true,
+                    show: false
+                ),
+                title: Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(
+                    '通讯录',
+                    key: Key('通讯录'),
+                  ),
+                )
+            ),
+            BottomNavigationBarItem(
+                icon:const LoadAssetSvg('icons_outlined_discover',color:const Color(0xff111111)),
+                activeIcon:const LoadAssetSvg('icons_filled_discover',color:const Color(0xff07c160)),
+                title: Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(
+                    '发现',
+                    key: Key('发现'),
+                  ),
+                )
+            ),
+            BottomNavigationBarItem(
+                icon:const LoadAssetSvg('icons_outlined_me',color:const Color(0xff111111)),
+                activeIcon:const LoadAssetSvg('icons_filled_me',color:const Color(0xff07c160)),
+                title: Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(
+                    '我的',
+                    key: Key('我的'),
+                  ),
+                )
+            )
+          ],
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
           elevation: 5.0,
@@ -112,6 +135,29 @@ class _AppMainState extends State<AppMain> {
           },
         ),
       ),
+    );
+  }
+
+
+  Widget _badgeIcon({ String icon,String count:"1",bool show:true ,bool isActive:false}){
+    return Badge(
+      badgeContent: Text(
+        "$count",
+        style: TextStyle(
+            color: const Color(0xffffffff),
+            fontSize: 12
+        ),
+      ),
+      elevation: 0,
+      showBadge: show,
+      padding: EdgeInsets.all(int.parse(count) > 9 ? 3 : 5),
+      animationDuration: Duration(milliseconds: 0),
+      child: LoadAssetSvg('$icon',color:Color( isActive ? 0xff07c160 : 0xff111111) ),
+      position: BadgePosition(
+        top: -3,
+        right: -7
+      ),
+
     );
   }
 }

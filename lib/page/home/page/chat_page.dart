@@ -92,6 +92,7 @@ class _ChatPageState extends State<ChatPage> {
         right: ScreenUtil.getInstance().setWidth(20)
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Flex(
             direction: Axis.horizontal,
@@ -118,7 +119,6 @@ class _ChatPageState extends State<ChatPage> {
                       leadingPadding: 10,
                       focusNode: _focusNode,
                       change: (val){
-                        print("内容：$val");
                         setState(() {
                           _inputContent = val;
                         });

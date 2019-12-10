@@ -92,12 +92,12 @@ class CustomChat extends StatelessWidget {
               direction: Axis.horizontal,
               children: <Widget>[
                 _chatTypeView(chatType, avatar,listPic),
-                SizedBox(
-                  width: ScreenUtil.getInstance().setWidth(20),
-                ),
                 Expanded(
                   flex: 1,
                   child: Container(
+                    margin: EdgeInsets.only(
+                      left: ScreenUtil.getInstance().setWidth(20),
+                    ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -141,7 +141,7 @@ class CustomChat extends StatelessWidget {
                         ),
                       ],
                     ),
-                    height: ScreenUtil.getInstance().setHeight(100),
+                    height: ScreenUtil.getInstance().setWidth(100),
                   ),
                 )
               ],

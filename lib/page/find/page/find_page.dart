@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wechat_app/common/loadAssetSvg.dart';
 import 'package:wechat_app/components/custom_cell.dart';
+import 'package:wechat_app/page/find/find_router.dart';
+import 'package:wechat_app/routers/fluro_navigator.dart';
 
 class FindPage extends StatefulWidget {
   @override
@@ -53,7 +55,7 @@ class _FindPageState extends State<FindPage> with AutomaticKeepAliveClientMixin 
               arrow: true,
               gap: true,
               onTap: (){
-
+                NavigatorUtils.push(context, FindRouter.momentsPage);
               },
             ),
             CustomCell(
